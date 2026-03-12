@@ -16,7 +16,6 @@ enum PlanStatus: string implements HasColor, HasIcon, HasLabel
         return match ($this) {
             self::Draft => 'Draft',
             self::Published => 'Published',
-
         };
     }
 
@@ -25,7 +24,6 @@ enum PlanStatus: string implements HasColor, HasIcon, HasLabel
         return match ($this) {
             self::Draft => 'gray',
             self::Published => 'success',
-
         };
     }
 
@@ -34,7 +32,6 @@ enum PlanStatus: string implements HasColor, HasIcon, HasLabel
         return match ($this) {
             self::Draft => 'heroicon-m-pencil-square',
             self::Published => 'heroicon-m-check-badge',
-
         };
     }
 }
