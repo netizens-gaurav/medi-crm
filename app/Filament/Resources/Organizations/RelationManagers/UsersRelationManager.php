@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Organizations\RelationManagers;
 
-use App\Filament\Resources\Users\UserResource;
+use App\Filament\Resources\Organizations\OrganizationResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Columns\TextColumn;
@@ -12,7 +12,7 @@ class UsersRelationManager extends RelationManager
 {
     protected static string $relationship = 'users';
 
-    protected static ?string $relatedResource = UserResource::class;
+    // protected static ?string $relatedResource = OrganizationResource::class;
 
     public function table(Table $table): Table
     {
