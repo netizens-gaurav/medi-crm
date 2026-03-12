@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use App\PlanStatus;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Plan extends Model
 {
-    use SoftDeletes;
+    use HasUuids,SoftDeletes;
+
     protected $fillable = [
         'name',
         'slug',
@@ -40,5 +43,16 @@ class Plan extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($plan) {
+            if (empty($plan->slug)) {
+                $plan->slug = Str::slug($plan->name);
+            }
+        });
     }
 }
