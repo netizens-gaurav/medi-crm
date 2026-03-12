@@ -23,19 +23,7 @@ return new class extends Migration
             $table->integer('display_order')->default(0);
             $table->string('status')->default('draft');
 
-            $table->boolean('has_patients')->default(false);
-            $table->boolean('has_appointments')->default(false);
-            $table->boolean('has_prescriptions')->default(false);
-            $table->boolean('has_followups')->default(false);
-            $table->boolean('has_medical_reps')->default(false);
-            $table->boolean('has_inventory')->default(false);
-            $table->boolean('has_external_labs')->default(false);
-            $table->boolean('has_branches')->default(false);
-            $table->boolean('has_team')->default(false);
-            $table->boolean('has_report_uploads')->default(false);
-            $table->boolean('has_billing')->default(false);
-            $table->boolean('has_mr_management')->default(false);
-            $table->boolean('has_lab_communication')->default(false);
+            $table->jsonb('modules')->nullable();
 
             $table->integer('max_patients')->nullable();
             $table->integer('max_appointments_per_month')->nullable();

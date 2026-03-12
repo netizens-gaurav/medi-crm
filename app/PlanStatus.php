@@ -1,9 +1,11 @@
 <?php
 
 namespace App;
+
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
+
 enum PlanStatus: string implements HasColor, HasIcon, HasLabel
 {
     case Draft = 'draft';
@@ -22,7 +24,7 @@ enum PlanStatus: string implements HasColor, HasIcon, HasLabel
     {
         return match ($this) {
             self::Draft => 'gray',
-            self::Published => 'success', 
+            self::Published => 'success',
 
         };
     }
