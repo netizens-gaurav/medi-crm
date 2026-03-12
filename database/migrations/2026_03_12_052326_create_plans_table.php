@@ -22,9 +22,7 @@ return new class extends Migration
             $table->boolean('show_on_landing')->default(true);
             $table->integer('display_order')->default(0);
             $table->string('status')->default('draft');
-
             $table->jsonb('modules')->nullable();
-
             $table->integer('max_patients')->nullable();
             $table->integer('max_appointments_per_month')->nullable();
             $table->integer('max_team_seats')->nullable();
