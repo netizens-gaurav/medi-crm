@@ -17,12 +17,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->foreignUuid('plan_id')->constrained()->cascadeOnDelete();
+            $table->foreignUuid('plan_id')->nullable()->constrained()->nullOnDelete();
             $table->string('ref', 8)->unique();
-            $table->string('status');
-            $table->softDeletes();
-
+            $table->string('status')->default('active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
